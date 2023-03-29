@@ -1,0 +1,62 @@
+:root {
+    --yellow-shade: #FFE20C;
+    --black: #3E3037;
+    --dark-yellow-shade: #C1B241;
+    --hover-shade: #e4d00a;
+}
+
+.card {
+    width: 200px;
+    height: 236px;
+    border-radius: 30px;
+    border: 3px solid var(--black);
+
+    background: var(--yellow-shade);
+}
+
+.card {
+    position: relative;
+    display: inline-block;
+    transform-style: preserve-3d;
+    transition: .15s cubic-bezier(0, 0, .6, 1);
+}
+
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: inherit;
+    background: var(--dark-yellow-shade);
+    box-shadow: 0 0 2px 3px #3E3037, 0 0.75em 2px 0 #3e3a3a;
+    transform: translate3d(0, 1em, -1em);
+    transition: .15s cubic-bezier(0, 0, .6, 1);
+}
+
+.card:hover {
+    background: var(--hover-shade);
+    transform: translate(0, .3em);
+}
+
+.card::before:hover {
+    box-shadow: 0 0 2px 3px #3E3037, 0 0.5em 2px 0 #3e3a3a;
+    transform: translate3d(0, .3em, -1em);
+}
+
+.card:active {
+    background: var(--yellow-shade);
+    transform: translate(0, .75em);
+}
+
+.card:active::before {
+    box-shadow: 0 0 2px 3px #b18597, 0 2px #3e3a3a;
+    transform: translate3d(0 , 0, -1em);
+}
+
+.card > img {
+    height: 100%;
+}
